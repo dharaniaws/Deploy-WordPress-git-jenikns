@@ -1,8 +1,3 @@
-#provider.tf
-provider "aws" {
-  region     = "us-west-1"
- }
-
 #vpc.tf
 resource "aws_vpc" "main" {
   cidr_block       = var.vpc_cidr
@@ -107,10 +102,10 @@ variable "subnet_cidr" {
 
 # Creating EC2 instance
 resource "aws_instance" "wordpress_instance" {
-  ami                         = "ami-0e0ece251c1638797"
+  ami                         = "ami-04639e6db24d3600d"
   instance_type               = "t2.micro"
   count                       = 1
-  key_name                    = "press"
+  key_name                    = "project"
   vpc_security_group_ids      = ["${aws_security_group.wordpress_sg.id}"]
   subnet_id                   = aws_subnet.main.id
   associate_public_ip_address = true
