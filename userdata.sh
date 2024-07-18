@@ -1,5 +1,4 @@
 #!/bin/bash
-sudo apt install -y git
 sudo apt install -y docker
 sudo systemctl start docker
 sudo systemctl enable docker
